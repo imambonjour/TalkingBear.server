@@ -1,0 +1,17 @@
+[project]
+name = "voice-proxy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.136.1",
+    "google-genai>=1.73.1",
+    "gtts>=2.5.4",
+    "pydub>=0.25.1",
+    "python-dotenv>=1.2.2",
+    "python-multipart>=0.0.27",
+    "speechrecognition>=3.16.1",
+    "uvicorn[standard]>=0.46.0",
+    "websockets>=16.0",
+]

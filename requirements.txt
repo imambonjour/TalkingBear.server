@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+websockets
+SpeechRecognition
+google-genai
+gtts
+python-dotenv
+pydub
+python-multipart
