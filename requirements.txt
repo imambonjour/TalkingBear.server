@@ -7,3 +7,4 @@ gtts
 python-dotenv
 pydub
 python-multipart
+openai

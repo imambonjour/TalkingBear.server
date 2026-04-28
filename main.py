@@ -1,7 +1,7 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, UploadFile, File, HTTPException
 from fastapi.responses import Response
 from handlers.stt import transcribe_audio
-from handlers.llm import get_gemini_response
+from handlers.llm import get_llm_response
 from handlers.tts import text_to_speech
 from middleware.auth import validate_device_key
 from utils.audio import pcm_to_wav, mp3_to_wav, is_wav
@@ -57,7 +57,7 @@ async def process_voice_pipeline(audio_bytes: bytes, output_format: str = "mp3")
     # 3. Gemini LLM
     t0 = time.time()
     try:
-        response_text = await get_gemini_response(transcript)
+        response_text = await get_llm_response(transcript)
     except Exception as e:
         raise RuntimeError(f"Gemini gagal: {e}")
     timings["llm_ms"] = int((time.time() - t0) * 1000)
