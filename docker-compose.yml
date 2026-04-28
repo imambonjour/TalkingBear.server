@@ -1,0 +1,9 @@
+services:
+  voice-proxy:
+    build: .
+    container_name: talking-bear-proxy
+    restart: always
+    ports:
+      - "4545:8000" # Format: "PORT_LUAR:PORT_DALAM" (Ganti 9000 ke port yang Anda mau)
+    env_file:
+      - .env
